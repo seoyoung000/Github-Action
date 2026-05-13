@@ -2,7 +2,8 @@
 
 **20263624 장서영**
 
-React로 개발한 할 일 관리 웹 애플리케이션입니다. GitHub Actions를 활용하여 AWS S3에 자동으로 배포됩니다.
+React로 개발한 할 일 관리 웹 애플리케이션입니다.  
+GitHub Actions를 활용한 AWS S3 배포(과제1)와 AWS Amplify를 활용한 호스팅(과제2)을 모두 지원합니다.
 
 ---
 
@@ -68,6 +69,48 @@ http://mybucket-20263624.s3-website-us-east-1.amazonaws.com
 
 ---
 
-## CI/CD 구축 시연 영상
+## CI/CD 구축 시연 영상 (과제1 - GitHub Actions + S3)
+
+> YouTube 링크: (영상 업로드 후 여기에 추가)
+
+---
+
+## AWS Amplify 호스팅 (과제2)
+
+과제1의 GitHub 저장소를 AWS Amplify에 연결하여 자동 호스팅합니다.  
+main 브랜치에 push하면 Amplify가 자동으로 빌드 및 배포합니다.
+
+### Amplify 연결 순서
+
+1. AWS 콘솔 → **AWS Amplify** 접속
+2. **"Get started"** → **"Host your web app"**
+3. GitHub 선택 → 저장소 및 `main` 브랜치 연결
+4. 빌드 설정 확인 (자동 감지됨)
+   ```yaml
+   version: 1
+   frontend:
+     phases:
+       preBuild:
+         commands:
+           - npm install
+       build:
+         commands:
+           - npm run build
+     artifacts:
+       baseDirectory: build
+       files:
+         - '**/*'
+   ```
+5. **Save and deploy** 클릭 → 자동 배포 시작
+
+### Amplify 호스팅 URL
+
+```
+https://main.[앱ID].amplifyapp.com
+```
+
+> 배포 완료 후 Amplify 콘솔에서 실제 URL 확인 가능
+
+### AWS Amplify 서비스 활용 시연 영상
 
 > YouTube 링크: (영상 업로드 후 여기에 추가)
