@@ -32,11 +32,6 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
 
-      - name: Check credentials
-        run: |
-          aws sts get-caller-identity
-          aws s3 ls
-
       - name: Deploy to S3
         run: |
           aws s3 sync ./build s3://myybucket-20263624 --delete
