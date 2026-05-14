@@ -37,4 +37,4 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./build s3://mybucket-20263624-608810145972-ap-southeast-2-an --delete
+          aws s3 cp ./build/ s3://mybucket-20263624-608810145972-ap-southeast-2-an/ --recursive
