@@ -30,8 +30,8 @@ http://myyybucket-20263624.s3-website-us-east-1.amazonaws.com  (리전: us-east-
 
 ## 시연 영상 (과제1 - GitHub Actions + S3)
 
-> YouTube 링크: (영상 업로드 후 여기에 추가)
-
+---
+> YouTube 링크: https://youtu.be/t7c4soVUABc
 ---
 
 ## AWS Amplify 호스팅 URL (과제2)
